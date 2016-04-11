@@ -1,0 +1,32 @@
+en:
+  ricer4:
+    plugins:
+      auth:
+        
+        err_code: 'The entered confirmation code does not match.'
+        err_mail_already_set: "You already have setup your email address."
+        err_mail_not_set: "You do not have setup your email address yet."
+        msg_set: 'Your email address is now set to %{email}.'
+        msg_sent: 'A confirmation email has been sent to %{email}. The confirmation code is valid for %{duration}.'
+        
+        email:
+          trigger: "email"
+          description: 'Manage or show your email address.'
+          msg_show: 'Your email address is set to %{email}.'
+          msg_none: 'You don´t have an email address set yet.'
+          mail_subj: '[$BOT$] Signup confirmation'
+          mail_body: "Hello %{user}\n\nThank you very much for registering with the $BOT$ Chatbot.\n\nTo confirm your mail address, type: $T$$CMD$ %{email} %{code}\n\nKind Regards\nThe $BOT$ bot"
+          
+        email_change:
+          trigger: "changemail"
+          description: "Change your email address in a two mail steps process. If you lost control over your old email, you have to contact an admin of $BOT$."
+          mail_request_subj: '[$BOT$] E-Mail change - step 1'
+          mail_request_body: "Hello %{user}\n\nIt seem like you want to change your E-Mail to %{newmail}.\n\nTo confirm this, please say $T$$CMD$ %{newmail} %{code} to $BOT$.\n\nAnother mail will be sent to your new address, to confirm it´s existance.\n\nKind Regards\nThe $BOT$ bot"
+          mail_confirm_subj: '[$BOT$] E-Mail change - step 2'
+          mail_confirm_body: "Hello %{user}\n\nIt seem like you want to change your E-Mail to %{newmail}.\n\nTo confirm this, please say $T$$CMD$ %{newmail} %{code} to $BOT$.\n\nAfter this, the changes will be made.\n\nKind Regards\nThe $BOT$ bot"
+
+        email_recovery:
+          trigger: "recovery"
+          description: "Request a new password via email."
+          
+            
